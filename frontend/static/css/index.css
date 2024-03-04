@@ -1,0 +1,102 @@
+body {
+    --nav-width: 10vh;
+    margin: 0 0 0 var(--nav-width);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+.nav {
+    width: var(--nav-width);
+    height: 100vh;
+    background: #222222;
+}
+
+.nav__link {
+    --button-height: 9vh;
+    display: block;
+    margin: 5px;
+    height: var(--button-height);
+    text-decoration: none;
+    color: #eeeeee;
+    font-weight: 500;
+}
+.icon {
+    height: calc(var(--button-height) * 0.9);
+    width: calc(var(--nav-width) * 0.8);
+    padding-top:calc(var(--nav-width) * 0.06);
+    padding-left: calc(var(--button-height) * 0.06);
+}
+
+.nav__link:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#main_app {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+#notes_app {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.info_cube {
+    border-radius: 10px;
+    background-color: #009579;
+    outline: #00473a;
+    outline-width: 5px;
+    margin: 5px;
+    text-align: center;
+    padding: 15px;
+    width: 90vw;
+    height: 20vh;
+
+}
+.notes_cube{
+    background-color: #009579;
+    margin: 1px;
+    text-align: center;
+    padding: 15px;
+    width: 200px;
+    height:200px;
+}
+
+a {
+    color: #009579;
+}
+
+.logo {
+    height: var(--nav-width) / 1.5;
+    width: var(--nav-width);
+}
+.headerBar {
+    display:flex;
+    justify-content: CENTER;
+    background-color: #009579;
+    height: 10vh;
+    width: 100vw;
+}
+#headerText {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 200%;
+    color: #eeeeee;
+    padding:3vh;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.mainBody {
+    display: flex;
+}
