@@ -1,0 +1,1 @@
+{"version":3,"file":"action.d.ts","sourceRoot":"","sources":["../../../src/cli/interfaces/action.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,0BAA0B,CAAC;AACvD,MAAM,WAAW,MAAM;IACrB,IAAI,EAAE,WAAW,CAAC;IAClB,MAAM,EAAE,GAAG,EAAE,CAAC;CACf"}

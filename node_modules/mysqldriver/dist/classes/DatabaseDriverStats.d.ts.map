@@ -1,0 +1,1 @@
+{"version":3,"file":"DatabaseDriverStats.d.ts","sourceRoot":"","sources":["../../src/classes/DatabaseDriverStats.ts"],"names":[],"mappings":"AAAA,qBAAa,mBAAmB;IAC9B,KAAK,EAAE;QAAE,CAAC,GAAG,EAAE,MAAM,GAAG,MAAM,CAAA;KAAE,CAAC;;IAIjC,OAAO,CAAC,eAAe;IAKhB,aAAa,CAAC,QAAQ,EAAE,sBAAsB;IAM9C,OAAO,CAAC,QAAQ,EAAE,sBAAsB,GAAG,MAAM;IAIjD,KAAK;CAGb;AAED,oBAAY,sBAAsB;IAChC,KAAK,UAAU;CAChB"}
