@@ -8,7 +8,7 @@ body {
 .nav {
     width: var(--nav-width);
     height: 100vh;
-    background: #222222;
+    background: #000000;
 }
 
 .nav__link {
@@ -47,7 +47,7 @@ body {
 
 .info_cube {
     border-radius: 10px;
-    background-color: #009579;
+    background-color: #df7126;
     outline: #00473a;
     outline-width: 5px;
     margin: 5px;
@@ -70,22 +70,14 @@ a {
     color: #009579;
 }
 
-.logo {
-    height: var(--nav-width) / 1.5;
-    width: var(--nav-width);
-}
 .headerBar {
-    display:flex;
-    justify-content: CENTER;
-    background-color: #009579;
-    height: 10vh;
-    width: 100vw;
-}
-#headerText {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 200%;
-    color: #eeeeee;
-    padding:3vh;
+    width:100vw;
+    height: 100px;
+    padding: 0;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-image: url("https://i.postimg.cc/DzGN7mXp/Web-Header.png");
 }
 
 .container {
