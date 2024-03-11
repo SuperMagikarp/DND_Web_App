@@ -36,6 +36,7 @@ body {
     flex-direction: column;
     line-height: 1.5;
     font-weight: 500;
+    margin:10px;
 }
 
 #notes_app {
@@ -65,6 +66,15 @@ body {
     width: 200px;
     height:200px;
 }
+.notes_cube:hover{
+    background-color: #01bb99;
+}
+.new_notes{
+    /* display:"flex";
+    flex-direction: column; */
+    margin: 1000px;
+}
+
 
 a {
     color: #009579;

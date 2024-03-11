@@ -1,31 +1,15 @@
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView{
-    contructor() {
+    constructor(params) {
+        super(params)
         this.setTitle("Notes");
     }
 
     async getHtml(){
         return `
         <div id="notes_app">
-            <div class="notes_cube">square1</div>
-            <div class="notes_cube">square2</div>
-            <div class="notes_cube">square3</div>
-            <div class="notes_cube">square1</div>
-            <div class="notes_cube">square2</div>
-            <div class="notes_cube">square3</div>
-            <div class="notes_cube">square1</div>
-            <div class="notes_cube">square2</div>
-            <div class="notes_cube">square3</div>
-            <div class="notes_cube">square1</div>
-            <div class="notes_cube">square2</div>
-            <div class="notes_cube">square3</div>
-            <div class="notes_cube">square1</div>
-            <div class="notes_cube">square2</div>
-            <div class="notes_cube">square3</div>
-            <div class="notes_cube">square1</div>
-            <div class="notes_cube">square2</div>
-            <div class="notes_cube">square3</div>
+            <a href="/notes/edit"><div class="notes_cube" id="add_note"></div></a>
         </div>
             `;
     }

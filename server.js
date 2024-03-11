@@ -14,7 +14,6 @@ var con =  mysql.createConnection({
 }
 )
 
-
 app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
 
 app.get("/*", (req, res) => {
