@@ -27,16 +27,16 @@ const router = async () => {
     })
 
     let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null)
-
+    
     if (!match){
         console.log("no match found returning to home")
         match = {
             route: routes[0],
-            isMatch: true
+            result: true
         }
     }
     const view = new match.route.view(getParams(match))
-
+    
     document.querySelector("#app").innerHTML = await view.getHtml();
 
     console.log(view)

@@ -16,20 +16,31 @@ var con =  mysql.createConnection({
 
 app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
 
+app.get("/notes/all", (req, res) => {
+  res.json({ notes: [
+    {
+      id:"1",
+      title: "SADGE",
+      note: "I killed  a player today, That was bad",
+      user: "Cuan",
+      date: "11/04/2023"
+    },
+    {
+      id:"2",
+      title: "SADGER",
+      note: "I killed another player today, That was bad",
+      user: "Cuan",
+      date: "11/04/2023"
+    }
+    ]
+    })
+})
 app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 
-app.post('/*', (req, res) => {
-  con.connect(function(err){
-    if(err) throw err;
-    console.log("Connected");
-    var sql = "INSERT INTO people (name, age) values ('Rod', 63)"
-    con.query(sql, function(err, result){
-      if (err) throw err;
-      res.send('Got a POST request')
-    })
-  })
+app.post('/notes/update', (req, res) => {
+  console.log(req)
   
   })
 

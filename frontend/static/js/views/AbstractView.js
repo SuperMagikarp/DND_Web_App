@@ -13,4 +13,17 @@ export default class {
     async getHtml(){
         return "";
     }
+
+    async getAllNotes(){
+        try{
+            const response = await fetch("http://localhost:5050/notes/all")
+            if (!response.ok){
+                throw new Error("Could not find resource")
+            }
+            const data = await response.json()
+            return data.notes
+        }catch(error){
+            console.error(error)
+        }
+    }
 }
