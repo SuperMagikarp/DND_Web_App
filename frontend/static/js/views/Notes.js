@@ -19,7 +19,7 @@ export default class extends AbstractView{
     async getNoteDivs(notes){
         var main_str = ""
         for (const note of notes){
-            main_str += `<a href="/notes/${note.id}"><div class="notes_cube"><h1>${note.title}</h1>${note.note}</div><a>\n`
+            main_str += `<a href="/notes/${note.id}" class="notes__link"><div class="notes_cube"><h1>${note.title}</h1>${note.note}</div><a>\n`
         }
         return main_str
     }
