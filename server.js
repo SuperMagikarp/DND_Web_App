@@ -22,7 +22,18 @@ async function getNotes(){
   return rows
 }
 
+async function updateNotes(body){
+    con.query(` UPDATE notes
+                SET title=?, note=?, updatedate=?
+                WHERE id=?`, 
+                [body.title, body.note, body.date, parseInt(body.id)])
+}
+async function addNewNote(body){
+    con.query("INSERT INTO notes(title, note, updatedate) VALUES (?,?,?)", [body.title, body.note, body.date])
+}
+
 app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
+app.use(express.json())
 
 app.get("/notes/all", async (req, res) => {
   const notes = await getNotes()
@@ -33,8 +44,18 @@ app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });
 
-app.post('/notes/update', (req, res) => {
-  console.log(req)  
+app.post('/notes/update', async (req, res) => {
+  const body = req.body
+  try{
+  if (body.id === "new"){
+      await addNewNote(body)
+      .then(res.send("Note Added"))
+  }else{
+    await updateNotes(body)
+    .then(res.send("Note Updated"))
+  }}catch(err){
+      console.error(err)
+  }
 })
 
 app.listen(process.env.PORT, () => console.log("Server Running"));

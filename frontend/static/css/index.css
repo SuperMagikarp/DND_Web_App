@@ -86,10 +86,10 @@ a.notes__link {
 a {
     color: white;
 }
-.note_add{
+#note_add{
     border:none;
     resize: none;
-    background-color: #cccccc;
+    background-color: #ffffff;
     border-radius: 5px;
 }
 #notes_title{
