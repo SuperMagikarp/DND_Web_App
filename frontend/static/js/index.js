@@ -1,46 +1,59 @@
 import Dashboard from "./views/Dashboard.js"
 import Notes from "./views/Notes.js"
+import NotesNew from "./views/NotesNew.js"
 
+const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$")
+
+const getParams = match => {
+    const values = match.result.slice(1);
+    const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
+
+    return Object.fromEntries(keys.map((key, i) => {
+        return [key, values[i]]
+    }))
+}
 
 const router = async () => {
     const routes = [
         {path:"/", view:  Dashboard},
-        {path:"/notes", view: Notes}
+        {path:"/notes", view: Notes},
+        {path:"/notes/:id", view: NotesNew}
     ]
-
     const potentialMatches = routes.map(route => {
         return {
             route: route,
-            isMatch: location.pathname === route.path
+            result: location.pathname.match(pathToRegex(route.path))
         }
     })
 
-    let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch)
-
+    let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null)
+    
     if (!match){
         console.log("no match found returning to home")
         match = {
             route: routes[0],
-            isMatch: true
+            result: true
         }
     }
-    const view = new match.route.view()
-
+    const view = new match.route.view(getParams(match))
+    
     document.querySelector("#app").innerHTML = await view.getHtml();
-
+    await view.postData()
     console.log(view)
 }
 
 window.addEventListener("popstate", router)
 
-document.addEventListener("DOMContentLoaded", () =>{
-    var images = document.querySelectorAll(".icon")
+
+var images = document.querySelectorAll(".icon")
     images.forEach(image => {
         var static_image = image.getAttribute("src")
         var anim_image = image.getAttribute("animatedimage")
         image.onmouseover = () => image.setAttribute("src", anim_image)
         image.onmouseleave = () => image.setAttribute("src", static_image)
-    })
+})
+
+document.addEventListener("DOMContentLoaded", () =>{
     router();
 })
 
