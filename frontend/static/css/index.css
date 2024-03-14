@@ -9,6 +9,9 @@ body {
     width: var(--nav-width);
     height: 100vh;
     background: black;
+    right:0;
+    left:0;
+    top:0;
 }
 
 .nav__link {
@@ -59,7 +62,6 @@ body {
 
 }
 .notes_cube{
-    
     background-color: #009579;
     font-size: 15px;
     border-radius: 5px;
@@ -81,8 +83,22 @@ a.notes__link {
     flex-direction: column; */
     margin: 1000px;
 }
+#musicbar{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; 
+    position: fixed; 
+    bottom:0%;
+    width:100%; 
+    background-color: #000000; 
+    opacity: 1;
+    color: white;
+}
 
-
+.music_info{
+    margin:10vh;
+}
 a {
     color: white;
 }
@@ -118,4 +134,23 @@ a {
 
 .mainBody {
     display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.app_container {
+    display: flex;
+    height: 100%;
+}
+
+.music_buttons{
+    border:none;
+    background-color: #009579;
+    border-radius: 50%;
+    height:5vh;
+    width:5vh;
+    margin: 2px;
+}
+.music_buttons:hover{
+    background-color: #00473a;
 }

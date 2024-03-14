@@ -1,6 +1,7 @@
 import Dashboard from "./views/Dashboard.js"
 import Notes from "./views/Notes.js"
 import NotesNew from "./views/NotesNew.js"
+import MusicView from "./views/MusicView.js"
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$")
 
@@ -17,7 +18,8 @@ const router = async () => {
     const routes = [
         {path:"/", view:  Dashboard},
         {path:"/notes", view: Notes},
-        {path:"/notes/:id", view: NotesNew}
+        {path:"/notes/:id", view: NotesNew},
+        {path:"/music", view:MusicView}
     ]
     const potentialMatches = routes.map(route => {
         return {
