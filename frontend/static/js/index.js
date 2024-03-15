@@ -2,6 +2,9 @@ import Dashboard from "./views/Dashboard.js"
 import Notes from "./views/Notes.js"
 import NotesNew from "./views/NotesNew.js"
 import MusicView from "./views/MusicView.js"
+import MapView from "./views/MapView.js"
+import MapNew from "./views/MapNew.js"
+import TokenView from "./views/TokenView.js"
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$")
 
@@ -19,7 +22,11 @@ const router = async () => {
         {path:"/", view:  Dashboard},
         {path:"/notes", view: Notes},
         {path:"/notes/:id", view: NotesNew},
-        {path:"/music", view:MusicView}
+        {path:"/music", view:MusicView},
+        {path:"/maps", view:MapView},
+        {path:"/maps/:id", view:MapNew},
+        {path:"/tokens", view:TokenView},
+        {path:"/tokens/:id", view}
     ]
     const potentialMatches = routes.map(route => {
         return {
