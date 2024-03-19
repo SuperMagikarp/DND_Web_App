@@ -26,7 +26,7 @@ const router = async () => {
         {path:"/maps", view:MapView},
         {path:"/maps/:id", view:MapNew},
         {path:"/tokens", view:TokenView},
-        {path:"/tokens/:id", view}
+        {path:"/tokens/:id", view:Dashboard}
     ]
     const potentialMatches = routes.map(route => {
         return {

@@ -39,7 +39,7 @@ app.get("/notes/all", async (req, res) => {
   const notes = await getNotes()
   res.send({notes: notes})
 })
-
+ 
 app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"));
 });

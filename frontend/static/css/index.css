@@ -51,7 +51,7 @@ body {
 
 .info_cube {
     border-radius: 10px;
-    background-color: #df7126;
+    background-color: #009579;
     outline: #00473a;
     outline-width: 5px;
     margin: 5px;
@@ -61,6 +61,50 @@ body {
     height: 20vh;
 
 }
+.song_bar{
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #009579;
+    border:none;
+    outline-width: 5px;
+    margin: 5px;
+    text-align: center;
+    padding: 15px;
+    width: 90vw;
+    height: 20vh;
+}
+.song_bar:hover #plus_sign{
+    background-color: #00ecc1;
+}
+.song_bar:hover {
+    background-color: #01bb99;
+}
+
+#plus_sign{
+    display: block;
+    border:none;
+    background-color: #01bb99;
+    border-radius: 50%;
+    height:10vh;
+    width:10vh;
+    margin: 2px;
+}
+#plus_sign::before {
+    content: "+";
+    height:10vh;
+    width:10vh;
+    font-size:100px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-family:courier;
+    color:white;
+  }
+
 .notes_cube{
     background-color: #009579;
     font-size: 15px;

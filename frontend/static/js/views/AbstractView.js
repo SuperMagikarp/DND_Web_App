@@ -14,6 +14,10 @@ export default class {
         return "";
     }
 
+    async postData(){
+
+    }
+    
     async getAllNotes(){
         try{
             const response = await fetch("http://localhost:5050/notes/all")
